@@ -1,0 +1,6 @@
+42;Seppo Seitsenottelija;M
+101;Vertti Veteraaniurheilija;M70
+41;Severi Seitsenottelija;M
+43;Ylermi Yleisurheilija;M
+61;Yrjänä Yleisurheilija;M40
+60;K. Keskeyttäjä;M40

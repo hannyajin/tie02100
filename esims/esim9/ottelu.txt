@@ -1,0 +1,7 @@
+juoksu-60m.txt
+pituushyppy.txt
+kuulantyonto.txt
+korkeushyppy.txt
+aitajuoksu-60m.txt
+seivashyppy.txt
+juoksu-1000m.txt

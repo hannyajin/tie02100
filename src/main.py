@@ -56,7 +56,7 @@ def main():
 
     # luetaan lista
     try:
-        file_osallistujat = open("osallistujat.txt", "r+")
+        file_osallistujat = open("osallistujat.txt", "r")
     except:
         print ("Virhe osallistujatiedoston lukemisessa.")
         return -1
@@ -80,7 +80,7 @@ def main():
 
     # luetaan ottelu tiedot
     try:
-        file_ottelut = open("ottelu.txt", "r+")
+        file_ottelut = open("ottelu.txt", "r")
     except:
         print ("Virhe ottelutiedoston lukemisessa.")
         return -1
@@ -93,7 +93,7 @@ def main():
         # pomitaan lajin tiedot taman tiedostosta
         # ja lisataan pisteet osallistjoille
         try:
-            file_ottelu = open(line.strip(), "r+")
+            file_ottelu = open(line.strip(), "r")
         except:
             print ("Virhe lajitiedoston " + line.strip() + " lukemisessa.")
             return -1
@@ -164,10 +164,10 @@ def main():
     tulokset = sorted(tulokset)
 
     try:
-        file_tulokset = open("tulokset.txt", "wb")
+        file_tulokset = open("tulokset.txt", "w")
         file_tulokset.write( str_otsikkorivi + '\n' )
         for line in tulokset:
-            file_tulokset.write( bytes(line + '\n') )
+            file_tulokset.write( line + '\n' )
         file_tulokset.close()
         print ("Tulokset kirjoitettu tiedostoon tulokset.txt.")
     except:

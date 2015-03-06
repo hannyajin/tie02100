@@ -154,7 +154,7 @@ def main():
             if p:
                 total_points += float(p)
                 total_series += 1
-                ostr += (";" + str(p))
+                ostr += (";" + str(float(p)))
             else:
                 ostr += ";-"
         ostr += (";" + str(total_points))

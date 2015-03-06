@@ -1,7 +1,7 @@
 tunnus;nimi;sarja;juoksu-60m;pituushyppy;kuulantyonto;korkeushyppy;aitajuoksu-60m;seivashyppy;juoksu-1000m;kokonaispisteet;lajeja
-101;Vertti Veteraaniurheilija;M70;709.0;651.0;750.0;806.0;850.0;759.0;801.0;5326.0;7/7
-41;Severi Seitsenottelija;M;603.0;551.0;600.0;555.0;559.0;655.0;700.0;4223.0;7/7
-42;Seppo Seitsenottelija;M;661.0;750.0;700.0;610.0;505.0;502.0;700.0;4428.0;7/7
-43;Ylermi Yleisurheilija;M;603.0;601.0;700.0;655.0;661.0;555.0;500.0;4275.0;7/7
-60;K. Keskeyttäjä;M40;603.0;601.0;-;-;-;-;-;1204.0;2/7
-61;Yrjänä Yleisurheilija;M40;559.0;500.0;650.0;701.0;603.0;655.0;650.0;4318.0;7/7
+101;Vertti Veteraaniurheilija;M70;709;651;750;806;850;759;801;5326.0;7/7
+41;Severi Seitsenottelija;M;603;551;600;555;559;655;700;4223.0;7/7
+42;Seppo Seitsenottelija;M;661;750;700;610;505;502;700;4428.0;7/7
+43;Ylermi Yleisurheilija;M;603;601;700;655;661;555;500;4275.0;7/7
+60;K. Keskeyttäjä;M40;603;601;-;-;-;-;-;1204.0;2/7
+61;Yrjänä Yleisurheilija;M40;559;500;650;701;603;655;650;4318.0;7/7

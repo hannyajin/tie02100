@@ -64,12 +64,13 @@ def main():
         s = line.strip().split(";") # id ; nimi ; sarja
         if (len(s) != 3):
             print ("Virheellinen osallistujatiedosto: rivi '"
-                    + line +
+                    + line.strip() +
                     "' ei ole muodossa tunnus;nimi;sarja.")
             return -1
 
         if (s[0] in map_osallistujat):
-            print "Virheellinen osallistujatiedosto: tunnus "+s[0]+" toistuu."
+            print ("Virheellinen osallistujatiedosto: tunnus "
+                    + s[0] + " toistuu.")
             return -1
 
         o = Osallistuja( s[0], s[1], s[2] )
@@ -93,25 +94,28 @@ def main():
         try:
             file_ottelu = open(line.strip(), "r+")
         except:
-            print "Virhe lajitiedoston "+line.strip()+" lukemisessa."
+            print "Virhe lajitiedoston " + line.strip() + " lukemisessa."
             return -1
 
         for subline in file_ottelu:
             s = subline.strip().split(";") # id ; pisteet
             if (len(s) != 2 or not is_num(s[1])):
                 print ("Virheellinen lajitiedosto "
-                        + line.strip() + ": rivi '" + subline +
+                        + line.strip() + ": rivi '" + subline.strip() +
                         "' ei ole muodossa tunnus;pisteet.")
                 return -1
 
             if not (s[0] in map_osallistujat):
-                print "Virheellinen lajitiedosto "+line.strip()+": tunnus "+s[0]+" puuttuu osallistujatiedostosta."
+                print ("Virheellinen lajitiedosto "
+                        + line.strip() + ": tunnus "
+                        + s[0] + " puuttuu osallistujatiedostosta.")
                 return -1
 
             o = map_osallistujat[ s[0] ]
 
             if (o.get_points(laji) != None):
-                print "Virheellinen lajitiedosto "+line.strip()+": tunnus " +s[0]+" toistuu."
+                print ("Virheellinen lajitiedosto "
+                        + line.strip() + ": tunnus " + s[0] + " toistuu.")
                 return -1
 
             o.set_points(laji, s[1])
@@ -141,14 +145,11 @@ def main():
     '''
     for key in map_osallistujat.keys():
         o = map_osallistujat.get(key)
-        #print "\n"
-        #print o.get_name()
         ostr = ("" + o.get_id() + ";" + o.get_name() + ";" + o.get_sid())
         total_points = 0;
         total_series = 0;
         for laji in lajit:
             p = o.get_points(laji)
-            #print p
             if p:
                 total_points += float(p)
                 total_series += 1

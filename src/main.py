@@ -58,7 +58,7 @@ def main():
     try:
         file_osallistujat = open("osallistujat.txt", "r+")
     except:
-        print "Virhe osallistujatiedoston lukemisessa."
+        print ("Virhe osallistujatiedoston lukemisessa.")
         return -1
 
     for line in file_osallistujat:
@@ -82,7 +82,7 @@ def main():
     try:
         file_ottelut = open("ottelu.txt", "r+")
     except:
-        print "Virhe ottelutiedoston lukemisessa."
+        print ("Virhe ottelutiedoston lukemisessa.")
         return -1
 
     for line in file_ottelut:
@@ -95,7 +95,7 @@ def main():
         try:
             file_ottelu = open(line.strip(), "r+")
         except:
-            print "Virhe lajitiedoston " + line.strip() + " lukemisessa."
+            print ("Virhe lajitiedoston " + line.strip() + " lukemisessa.")
             return -1
 
         for subline in file_ottelu:
@@ -169,9 +169,9 @@ def main():
         for line in tulokset:
             file_tulokset.write( bytes(line + '\n') )
         file_tulokset.close()
-        print "Tulokset kirjoitettu tiedostoon tulokset.txt."
+        print ("Tulokset kirjoitettu tiedostoon tulokset.txt.")
     except:
-        print "Virhe tulostiedoston kirjoittamisessa."
+        print ("Virhe tulostiedoston kirjoittamisessa.")
         return -1
 
     return 0 # exit success

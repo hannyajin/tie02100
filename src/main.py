@@ -26,17 +26,26 @@ class Osallistuja:
         return self.__sid
 
     def set_points(self, series, points):
-        self.__map_series[series] = float(points)
+        self.__map_series[series] = points
 
     def get_points(self, series):
         if series in self.__map_series:
-            return float(self.__map_series.get(series))
+            return self.__map_series.get(series)
         else:
             return None
 
     def toString(self):
         return "{} '{}' {} : {}".format(self.__id, self.__name, self.__sid, self.__map_series)
 def main():
+
+    # apu funktio
+    def is_num(n):
+        try:
+            float(n)
+            return True
+        except:
+            return False
+
     '''
     Ohjelma lukee ensin tiedoston osallistujat.txt, tämän jälkeen tiedoston ottelu.txt ja viimeiseksi kaikki ne tiedostot, joiden nimet tiedostossa ottelu.txt on lueteltuina. Tiedostot luetaan em. luettelossa esitetyssä järjestyksessä.
     '''
@@ -51,12 +60,12 @@ def main():
         print "Virhe osallistujatiedoston lukemisessa."
         return -1
 
-    rivi = -1
     for line in file_osallistujat:
-        rivi += 1
         s = line.strip().split(";") # id ; nimi ; sarja
         if (len(s) != 3):
-            print "Virheellinen osallistujatiedosto: rivi '"+rivi+"' ei ole muodossa tunnus;nimi;sarja."
+            print ("Virheellinen osallistujatiedosto: rivi '"
+                    + line +
+                    "' ei ole muodossa tunnus;nimi;sarja.")
             return -1
 
         if (s[0] in map_osallistujat):
@@ -87,12 +96,12 @@ def main():
             print "Virhe lajitiedoston "+line.strip()+" lukemisessa."
             return -1
 
-        rivi = -1
         for subline in file_ottelu:
-            rivi += 1
             s = subline.strip().split(";") # id ; pisteet
-            if (len(s) != 2):
-                print "Virheellinen lajitiedosto "+line.strip()+": rivi '"+rivi+"' ei ole muodossa tunnus;pisteet."
+            if (len(s) != 2 or not is_num(s[1])):
+                print ("Virheellinen lajitiedosto "
+                        + line.strip() + ": rivi '" + subline +
+                        "' ei ole muodossa tunnus;pisteet.")
                 return -1
 
             if not (s[0] in map_osallistujat):
@@ -141,7 +150,7 @@ def main():
             p = o.get_points(laji)
             #print p
             if p:
-                total_points += p
+                total_points += float(p)
                 total_series += 1
                 ostr += (";" + str(p))
             else:

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Christina Talmo 229756 TIE-02100 Harjoitustyo (Itsenainen Opiskelu)
+# Christian Talmo 229756 TIE-02100 Harjoitustyo (Itsenainen Opiskelu)
 # url: https://www.cs.tut.fi/~johoh/K2015/@wrapper.shtml?harjoitustyot/ht/tehtavananto
 # repo: https://github.com/hannyajin/tie02100
 

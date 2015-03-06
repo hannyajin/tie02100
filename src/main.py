@@ -162,7 +162,7 @@ def main():
         tulokset.append( ostr )
 
     tulokset = sorted(tulokset)
-    
+
     try:
         file_tulokset = open("tulokset.txt", "wb")
         file_tulokset.write( str_otsikkorivi + '\n' )
@@ -178,4 +178,5 @@ def main():
 
 
 # run program
-main()
+if __name__ == "__main__":
+    main()
